@@ -48,7 +48,7 @@
   return async (dispatch) => {
     try {
 
-      const response = await fetch('https://blossombackend.onrender.com/users/login', {
+      const response = await fetch('https://reacttriveous-default-rtdb.firebaseio.com/UserData/json', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -74,8 +74,8 @@
 export const signUp = (email, password) => {
   return async (dispatch) => {
     try {
-      
-      const response = await fetch('https://blossombackend.onrender.com/users/signup', {
+       // https://reacttriveous-default-rtdb.firebaseio.com
+      const response = await fetch('https://reacttriveous-default-rtdb.firebaseio.com/UserData/json', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

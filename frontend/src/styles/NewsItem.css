@@ -17,3 +17,9 @@
     padding: 10px;
     border: 1px solid #ccc;
   }
+
+  .list-view .news-item > img{
+   height: 150px;
+   text-align: center;
+   margin: auto;
+  }
