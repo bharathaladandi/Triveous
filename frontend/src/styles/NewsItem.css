@@ -3,3 +3,17 @@
     flex-wrap: wrap;
     justify-content: space-between;
   }
+  
+  .grid-view .news-item {
+    width: 30%;
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+  }
+  
+  .list-view .news-item {
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+  }

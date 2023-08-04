@@ -1,4 +1,4 @@
-  export const loginSuccess = (user) => {
+    export const loginSuccess = (user) => {
     return {
       type: 'LOGIN_SUCCESS',
       payload: user,
@@ -26,9 +26,28 @@
     };
   };
 
+  export const fetchNewsSuccess = (articles) => {
+    return {
+      type: 'FETCH_NEWS_SUCCESS',
+      payload: articles,
+    };
+  };
+  
+  export const toggleFavorite = (articleId) => {
+    return {
+      type: 'TOGGLE_FAVORITE',
+      payload: articleId,
+    };
+  };
+  
+  export const toggleGridView = () => {
+    return { type: 'TOGGLE_GRID_VIEW' };
+  };
+
   export const login = (email, password) => {
   return async (dispatch) => {
     try {
+
       const response = await fetch('https://blossombackend.onrender.com/users/login', {
         method: 'POST',
         headers: {
@@ -44,6 +63,7 @@
 
       const userData = await response.json();
       dispatch(loginSuccess(userData));
+
       
     } catch (error) {
       dispatch(loginFailure(error.message));
@@ -54,6 +74,7 @@
 export const signUp = (email, password) => {
   return async (dispatch) => {
     try {
+      
       const response = await fetch('https://blossombackend.onrender.com/users/signup', {
         method: 'POST',
         headers: {
@@ -66,7 +87,6 @@ export const signUp = (email, password) => {
         const errorData = await response.json();
         throw new Error(errorData.message || 'Sign-up failed');
       }
-
       const userData = await response.json();
       dispatch(signUpSuccess(userData));
     } catch (error) {
