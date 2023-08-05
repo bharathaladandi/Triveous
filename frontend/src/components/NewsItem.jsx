@@ -13,9 +13,9 @@ const NewsItem = ({ article, isFavorite, gridView, onFavoriteToggle }) => {
         </div>
         <div className="news-details">
           <h3>{title}</h3>
-          <button onClick={onFavoriteToggle}>
+          <Button onClick={onFavoriteToggle}>
             {isFavorite ? 'Remove from Favorites' : 'Add to Favorites'}
-          </button>
+          </Button>
         </div>
       </React.Fragment>
     ) : (
